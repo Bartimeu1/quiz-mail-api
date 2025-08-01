@@ -1,11 +1,10 @@
-import { IsString, IsArray, ArrayNotEmpty } from 'class-validator';
+import { IsString, IsArray, IsInt } from 'class-validator';
 
 export class SendRoomInvitesDto {
   @IsString()
   newRoomId: string;
 
   @IsArray()
-  @ArrayNotEmpty()
-  @IsString({ each: true })
+  @IsInt({ each: true })
   usersIds: number[];
 }
